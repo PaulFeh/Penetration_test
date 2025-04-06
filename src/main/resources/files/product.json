@@ -1,0 +1,39 @@
+{
+	"product": {
+		"101": {
+			"name": "Product name xx",
+			"price": "1000",
+			"title": "Product title xx"
+		},
+		"202": {
+			"name": "Product name yy",
+			"price": "2000",
+			"title": "Product title yy"
+		},
+		"303": {
+			"name": "Product name zz",
+			"price": "3000",
+			"title": "Product title zz"
+		}
+	},
+	"product_design": {
+		"101": {
+			"size": "12 x 21",
+			"color": "Gray",
+			"Material": "Rayon",
+			"description": "Product description xx"
+		},
+		"202": {
+			"size": "23 x 34",
+			"color": "Black",
+			"Material": "Brocade",
+			"description": "Product description yy"
+		},
+		"303": {
+			"size": "45 x 56",
+			"color": "Blue",
+			"Material": "Spandex",
+			"description": "Product description zz"
+		}
+	}
+}

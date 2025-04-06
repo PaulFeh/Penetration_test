@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/smtp.js}"></script>
+	
+	<title>ITIS-4221-5221</title>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 50%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container" style="width: 100%;">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">SMTP Header Injection </a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav" style="float: right;">
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+				</ul>
+			</div>
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <a href="/" th:href="@{/}" class="navbar-brand">Home</a>
+			    </div>
+			    
+			  </div>
+		</div>
+	</nav>
+	<br>
+	<br>
+
+	<h1>Login as a Customer</h1>
+
+
+
+	<div id="result_smtp" style="margin-left: 20px; margin-top: 20px; margin-bottom: 40px;">
+	</div>
+	<form th:action="@{/smtpInjection/form}" method=get id="smtp_in">
+		<div style="margin-left: 20px;margin-top: 20px;">
+			<label for="customer_firstName">First Name</label>:
+			<input style="margin-left: 25px;" type="text" id="customer_firstName" name="customer_firstName" autofocus="autofocus" placeholder="Name" /><br/>
+		</div>
+		<div style="margin-left: 20px; margin-top: 20px;">
+			<label for="customer_email">Email</label>:
+			<input style="margin-left: 60px;" type="email" id="customer_email" name="customer_email" autofocus="autofocus" placeholder="Email" /><br/>
+		</div>
+		<div style="margin-left: 20px; margin-top: 20px;">
+			<label for="customer_comments">Comment</label>:
+			<textarea style="margin-left: 30px;" id="customer_comments" name="customer_comments" autofocus="autofocus" cols="46" rows="3"></textarea>
+		</div>
+		<div style="margin-left: 20px; margin-top: 20px;">
+			<input type="submit" class="btn btn-success" name="login-submit" id="login-submit" value="Submit" />
+		</div>
+	</form>
+		
+
+</body>
+</html>

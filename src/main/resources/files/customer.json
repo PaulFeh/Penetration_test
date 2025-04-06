@@ -1,0 +1,34 @@
+{
+	"mpurba@xyz.com": {
+		"id": "886459",
+		"password": "123",
+		"name": "Moumita Das",
+		"phone": "980-126-5874",
+		"amount": "$52,000",
+		"performance": "Job knowledge: F</br>Work quality: S</br>Attendance: E</br>Communication: S"
+	},
+	"ashu@xyz.com": {
+		"id": "886359",
+		"password": "456",
+		"name": "Ashutosh Dutta",
+		"phone": "980-223-4597",
+		"amount": "$51,000",
+		"performance": "Job knowledge: S</br>Work quality: F</br>Attendance: E</br>Communication: S"
+	},
+	"ruhani@xyz.com": {
+		"id": "886460",
+		"password": "789",
+		"name": "Ruhani Faiheem",
+		"phone": "980-648-3458",
+		"amount": "$50,000",
+		"performance": "Job knowledge: S</br>Work quality: F</br>Attendance: P</br>Communication: S"
+	},
+	"basel@xyz.com": {
+		"id": "886560",
+		"password": "912",
+		"name": "Basel Abdeen",
+		"phone": "980-846-2468",
+		"amount": "$49,000",
+		"performance": "Job knowledge: E</br>Work quality: E</br>Attendance: P</br>Communication: S"
+	}
+}

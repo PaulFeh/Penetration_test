@@ -1,0 +1,26 @@
+--------------------- Sql injection: Employee table ------------------------
+
+Drop table IF EXISTS Employees;
+
+CREATE TABLE `vulnerability`.`Employees` (
+  `username` VARCHAR(10) NULL,
+  `first_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  `department` VARCHAR(45) NULL,
+  `address` VARCHAR(255) NULL);
+
+ALTER TABLE `vulnerability`.`Employees`
+CHANGE COLUMN `username` `username` VARCHAR(10) NOT NULL ,
+ADD PRIMARY KEY (`username`);
+
+ALTER TABLE `vulnerability`.`Employees`
+ADD COLUMN `password` VARCHAR(255) NOT NULL AFTER `address`;
+
+Truncate table Employees;
+INSERT INTO Employees (username, password, first_name, last_name, department, address)
+VALUES
+('abr04', '123', 'Abraham', 'Abraham', 'Development', '647 DEF Drive, CLT, NC, 28262'),
+('bob03', '456', 'Bob', 'Franco', 'Marketing', '646 DEF Drive, CLT, NC, 28262'),
+('joh05', '789', 'John', 'Smith', 'Marketing', '648 DEF Drive, CLT, NC, 28262'),
+('pau01', '101', 'Paulina', 'Travers', 'Accounting', '644 ABC Drive, CLT, NC, 28262'),
+('tob02', '112', 'Tobi', 'Barnett', 'Development', '645 DEF Drive, CLT, NC, 28262');

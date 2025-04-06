@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+<title>ITIS-4221-5221</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container" style="width: 100%;">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Penetration Testing</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav" style="float: right;">
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+				</ul>
+			</div>
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/sql_injection/" th:href="@{/sql_injection/}" >SQL Injection</a></li>
+					<li class="active"><a href="/idor/" th:href="@{/idor/}" >Insecure Direct Object References</a></li>
+					<li class="active"><a href="/xss/" th:href="@{/xss/}">Cross-Site Scripting</a></li>
+					<li class="active"><a href="/command_injection/" th:href="@{/command_injection/}">Command Injection</a></li>
+					<li class="active"><a href="/path_manipulation/" th:href="@{/path_manipulation/}">Path Manipulation</a></li>
+					<li class="active"><a href="/log_injection/" th:href="@{/log_injection/}">Log Injection</a></li>
+					<li class="active"><a href="/xpath_injection/" th:href="@{/xpath_injection/}">XPath Injection</a></li>
+					<li class="active"><a href="/ssrf/" th:href="@{/ssrf/}">SSRF</a></li>
+					<li class="active"><a href="/smtp_injection/" th:href="@{/smtp_injection/}">SMTP Injection</a></li>
+				</ul>
+			  </div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<p>
+			Welcome <span sec:authentication="principal.username">User</span>
+		</p>
+		<br>
+		<br>
+		<h2>Backend Source</h2>
+		<br>
+		<br>
+		<p><b>SQL Injection:</b> src -> main -> java -> net.uncc.app -> sql_injection -> Sql_injectionController.java</p>
+		<br>
+		<p><b>Insecure Direct Object References:</b> src -> main -> java -> net.uncc.app -> idor -> IdorController.java</p>
+		<br>
+		<p><b>Cross-Site Scripting:</b> src -> main -> java -> net.uncc.app -> xss -> XssController.java</p>
+		<br>
+		<p><b>Command Injection:</b> src -> main -> java -> net.uncc.app -> command_injection -> Command_injectionController.java</p>
+		<br>
+		<p><b>Path Manipulation:</b> src -> main -> java -> net.uncc.app -> path_manipulation -> Path_manipulationController.java</p>
+		<br>
+		<p><b>Log Injection:</b> src -> main -> java -> net.uncc.app -> log_injection -> Log_injectionController.java</p>
+		<br>
+		<p><b>XPath Injection:</b> src -> main -> java -> net.uncc.app -> xpath_injection -> XPath_injectionController.java</p>
+		<br>
+		<p><b>Server-Side Request Forgery:</b> src -> main -> java -> net.uncc.app -> ssrf -> SsrfController.java</p>
+		<br>
+		<p><b>SMTP Header Injection:</b> src -> main -> java -> net.uncc.app -> smtp -> SmtpController.java</p>
+	</div>
+
+</body>
+</html>
